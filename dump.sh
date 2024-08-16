@@ -52,9 +52,7 @@ print $? "monitor mode"
 
 
 # set and create empty dump directory
-dump_dir="/tmp/${interface}.networkdump"
-mkdir -p "$dump_dir"
-rm -rf "$dump_dir/*"
+dump_dir=$(mktemp -d)
 
 # scan for target network for 15 seconds
 sudo airodump-ng "$interface" --essid "$target" --write "$dump_dir/dump" >/dev/null 2>&1 &
