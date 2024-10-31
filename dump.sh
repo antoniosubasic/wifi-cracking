@@ -80,13 +80,13 @@ for i in {1..3}; do
     fi
 done
 
-print $scan_status "target network found" true
+[ $scan_status -ne 0 ] && print $scan_status "target network not found" true
 
 network_data=$(grep "$target" "$dump_dir/dump-0$i.csv")
 bssid=$(echo "$network_data" | awk -F, '{print $1}')
 channel=$(echo "$network_data" | awk -F, '{gsub(/^ *| *$/, "", $4); print $4}')
 
-print 0 "network dump ($bssid -> $channel)"
-sleep 3
+print $scan_status "target network found [$bssid]" true
+sleep 5
 
 airodump-ng -d "$bssid" -c "$channel" -w "$handshake_dir" "$interface"
