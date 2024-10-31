@@ -89,4 +89,4 @@ channel=$(echo "$network_data" | awk -F, '{gsub(/^ *| *$/, "", $4); print $4}')
 print $scan_status "target network found [$bssid]" true
 sleep 5
 
-airodump-ng -d "$bssid" -c "$channel" -w "$handshake_dir" "$interface"
+airodump-ng -d "$bssid" -c "$channel" -w "$handshake_dir/handshake" "$interface"
