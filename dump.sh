@@ -62,8 +62,8 @@ print $? "monitor mode" true
 dump_dir="/tmp/${interface}.networkdump"
 handshake_dir="/tmp/${interface}.handshake"
 for dir in "$dump_dir" "$handshake_dir"; do
-    mkdir -p "$dir"
-    rm -rf "$dir/*"
+    [ ! -d "$dir" ] && mkdir -p "$dir"
+    sudo rm -rf "$dir"/*
 done
 
 # scan for target network 3 times for 5 seconds
