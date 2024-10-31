@@ -11,8 +11,11 @@ cracking WPA/WPA2 secured WiFi networks with the aircrack-ng suite
 -   [Kali Linux](https://www.kali.org/get-kali)
 -   [aircrack-ng suite](https://www.aircrack-ng.org) (pre-installed on Kali Linux)
 -   external WiFi adapter with [monitor mode](https://en.wikipedia.org/wiki/Monitor_mode) and packet injection capabilities ([PiAEK AC-1200 mpbs](https://www.amazon.de/PiAEK-Adapter-Wireless-Verl%C3%A4ngerungskabel-Unterst%C3%BCtzung/dp/B08BHY92R4) used in this guide)
--   drivers for the external WiFi adapter ([rtl8812au](https://github.com/aircrack-ng/rtl8812au) used in this guide)
--   run `sudo su` in the shell to stay in root mode and not have to run every command with `sudo`
+-   drivers for the external WiFi adapter ([rtl8812au](dependencies/rtl8812au-5.13.6.tar.gz) used in this guide)
+-   linux kernel headers (installed via _package manager_ or [_/pool/main/l/linux/_](https://http.kali.org/kali/pool/main/l/linux/)) - used in this guide:
+    -   [linux-headers-6.8.11-common_6.8.11-1kali2_all.deb](https://http.kali.org/kali/pool/main/l/linux/linux-headers-6.8.11-common_6.8.11-1kali2_all.deb)
+    -   [linux-kbuild-6.8.11_6.8.11-1kali2_amd64.deb](https://http.kali.org/kali/pool/main/l/linux/linux-kbuild-6.8.11_6.8.11-1kali2_amd64.deb)
+    -   [linux-headers-6.8.11-amd64_6.8.11-1kali2_amd64.deb](https://http.kali.org/kali/pool/main/l/linux/linux-headers-6.8.11-amd64_6.8.11-1kali2_amd64.deb)
 
 ## Walkthrough
 
